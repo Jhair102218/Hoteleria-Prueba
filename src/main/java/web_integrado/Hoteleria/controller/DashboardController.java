@@ -1,6 +1,8 @@
 package web_integrado.Hoteleria.controller;
 
-import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,28 +12,25 @@ import web_integrado.Hoteleria.service.HabitacionService;
 @Controller
 public class DashboardController {
 
-    private final HabitacionService habitacionService;
-    private final ClienteService clienteService;
+    @Autowired
+    private HabitacionService habitacionService;
 
-    public DashboardController(HabitacionService habitacionService, ClienteService clienteService) {
-        this.habitacionService = habitacionService;
-        this.clienteService = clienteService;
-    }
+    @Autowired
+    private ClienteService clienteService;
 
     @GetMapping("/dashboard")
-    public String dashboard(Model model, HttpSession session) {
-        String role = (String) session.getAttribute("role");
-        String username = (String) session.getAttribute("username");
-
-        if (role == null) {
-            return "redirect:/login";
-        }
+    public String dashboard(Model model, Authentication authentication) {
+        String username = authentication.getName();
+        String role = authentication.getAuthorities().stream()
+                .map(GrantedAuthority::getAuthority)
+                .findFirst()
+                .orElse("USER");
 
         long totalHabitaciones = habitacionService.listarHabitaciones().size();
         long totalClientes = clienteService.listarClientes().size();
-        long disponibles = habitacionService.listarPorEstado("Disponible").size();
-        long ocupadas = habitacionService.listarPorEstado("Ocupada").size();
-        long mantenimiento = habitacionService.listarPorEstado("Mantenimiento").size();
+        long disponibles = habitacionService.listarPorEstado("DISPONIBLE").size();
+        long ocupadas = habitacionService.listarPorEstado("OCUPADA").size();
+        long mantenimiento = habitacionService.listarPorEstado("MANTENIMIENTO").size();
 
         model.addAttribute("username", username);
         model.addAttribute("role", role);
