@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis Digital - Tu Mejor Experiencia Hotelera</title>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" th:href="@{/css/index-styles.css}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- AOS Animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tipografías -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Hero -->
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="navbar-home">
+            <div class="logo">Oasis Digital</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#rooms">Habitaciones</a></li>
+                    <li><a href="#facilities">Instalaciones</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <a th:href="@{/login}" class="login-button">Iniciar Sesión</a>
+        </div>
+        <div class="hero-content">
+            <h1 data-aos="fade-up">Oasis Digital: Lujo, Confort y Experiencia</h1>
+            <p data-aos="fade-up" data-aos-delay="300">Tu refugio perfecto en el corazón de Lima. Descubre habitaciones
+                elegantes, gastronomía de autor y servicios pensados para tu bienestar.</p>
+            <a href="#rooms" class="cta-button" data-aos="fade-up" data-aos-delay="600">Explorar Habitaciones</a>
+        </div>
+    </header>
+
+    <!-- Nosotros -->
+    <section id="about" class="about-section">
+        <div class="content-wrapper">
+            <h2 data-aos="fade-up">Acerca de Nosotros</h2>
+            <p data-aos="fade-up" data-aos-delay="200">
+                En Oasis Digital, combinamos elegancia, tecnología y hospitalidad para ofrecer una experiencia hotelera
+                inolvidable. Nuestro compromiso es brindar confort, seguridad y atención personalizada en cada rincón
+                del hotel.
+            </p>
+        </div>
+    </section>
+
+    <!-- Habitaciones -->
+    <section id="rooms" class="services-section">
+        <div class="content-wrapper">
+            <h2 data-aos="fade-up">Tipos de Habitaciones</h2>
+            <div class="services-grid">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="icon fas fa-door-open"></i>
+                    <h3>Suite Ejecutiva</h3>
+                    <p>Amplia, elegante y equipada con escritorio, minibar y vista panorámica.</p>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="icon fas fa-bed"></i>
+                    <h3>Habitación Deluxe</h3>
+                    <p>Perfecta para descansar con estilo. Incluye Wi-Fi, TV Smart y baño privado.</p>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="icon fas fa-user-friends"></i>
+                    <h3>Familiar</h3>
+                    <p>Ideal para grupos o familias. Espacio cómodo y seguro para todos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instalaciones -->
+    <section id="facilities" class="about-section">
+        <div class="content-wrapper">
+            <h2 data-aos="fade-up">Instalaciones</h2>
+            <div class="services-grid">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="icon fas fa-spa"></i>
+                    <h3>Spa & Bienestar</h3>
+                    <p>Masajes, sauna y tratamientos relajantes para cuerpo y mente.</p>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="icon fas fa-dumbbell"></i>
+                    <h3>Gimnasio</h3>
+                    <p>Equipado con máquinas modernas y espacio para entrenamiento funcional.</p>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="icon fas fa-swimming-pool"></i>
+                    <h3>Piscina Panorámica</h3>
+                    <p>Relájate con vistas espectaculares desde nuestra terraza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="gallery" class="gallery-section">
+        <div class="content-wrapper">
+            <h2 data-aos="fade-up">Nuestra Galería</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Explora los espacios que hacen de Oasis Digital una experiencia
+                inolvidable.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item-wrapper" data-aos="fade-in" data-aos-duration="800">
+                    <img th:src="@{/images/img4.jpg}" alt="Habitación de Lujo">
+                    <div class="gallery-text-overlay">
+                        <h3>Habitación de Lujo</h3>
+                        <p>Comodidad y elegancia en cada detalle.</p>
+                    </div>
+                </div>
+                <div class="gallery-item-wrapper" data-aos="fade-in" data-aos-duration="800" data-aos-delay="100">
+                    <img th:src="@{/images/img5.jpg}" alt="Restaurante Gourmet">
+                    <div class="gallery-text-overlay">
+                        <h3>Restaurante Gourmet</h3>
+                        <p>Comida, platos elegantes y postres</p>
+                    </div>
+                </div>
+                <div class="gallery-item-wrapper" data-aos="fade-in" data-aos-duration="800" data-aos-delay="200">
+                    <img th:src="@{/images/img6.jpg}" alt="Piscina Panorámica">
+                    <div class="gallery-text-overlay">
+                        <h3>Piscina Panorámica</h3>
+                        <p>Vistas impresionantes y un ambiente relajante.</p>
+                    </div>
+                </div>
+                <div class="gallery-item-wrapper" data-aos="fade-in" data-aos-duration="800" data-aos-delay="300">
+                    <img th:src="@{/images/img7.jpg}" alt="Lobby Elegante">
+                    <div class="gallery-text-overlay">
+                        <h3>Lobby Elegante</h3>
+                        <p>Un espacio acogedor y sofisticado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clima -->
+    <section id="weather" class="info-section">
+        <div class="content-wrapper" data-aos="fade-up">
+            <h2>Clima en Lima</h2>
+            <p id="weather-info">Cargando clima...</p>
+        </div>
+    </section>
+
+    <!-- Tipo de cambio -->
+    <section id="exchange" class="info-section">
+        <div class="content-wrapper" data-aos="fade-up">
+            <h2>Tipo de Cambio</h2>
+            <p id="exchange-info">Cargando tipo de cambio...</p>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section id="map" class="info-section">
+        <div class="content-wrapper" data-aos="fade-up">
+            <h2>¿Dónde Estamos?</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.000000!2d-77.033!3d-12.121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c91b00000001%3AOasis+Digital!5e0!3m2!1ses!2spe!4v0000000000000"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="content-wrapper" data-aos="fade-up">
+            <h2>¿Listo para tu próxima estadía?</h2>
+            <p>Reserva ahora y vive el confort que mereces.</p>
+            <a th:href="@{/login}" class="cta-button">Reservar Ahora</a>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="contact-section">
+        <div class="content-wrapper">
+            <h2 data-aos="fade-up">Contáctanos</h2>
+            <p data-aos="fade-up" data-aos-delay="100">
+                ¿Tienes dudas o deseas más información? Estamos aquí para ayudarte.
+            </p>
+            <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
+                <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Miraflores, Lima</p>
+                <p><i class="fas fa-phone-alt"></i> +51 987 654 321</p>
+                <p><i class="fas fa-envelope"></i> info@oasisdigital.com</p>
+                <p><i class="fas fa-clock"></i> Lunes a Viernes: 9am - 6pm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="content-wrapper">
+            <p>&copy; 2025 Oasis Digital. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts externos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Script personalizado -->
+    <script th:src="@{/js/index-scripts.js}"></script>
+</body>
+
+</html>
